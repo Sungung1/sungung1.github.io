@@ -97,6 +97,7 @@
        @media (max-width: 768px) {
     body {
         flex-direction: column;
+        overflow-x: hidden; /* 오른쪽 깨짐 방지 */
     }
     .sidebar {
         width: 100%;
@@ -112,21 +113,23 @@
         padding: 10px 0;
         background: #2c2f3f;
         box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box; /* 깨짐 방지 */
     }
     .sidebar a {
         font-size: 14px;
-        padding: 10px;
-        margin: 0;
-        flex-grow: 1;
+        padding: 8px;
+        flex-grow: 1; /* 사이드바 메뉴 균등 정렬 */
         text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
+        white-space: nowrap; /* 텍스트 줄바꿈 방지 */
     }
     .main-content {
         margin-left: 0;
         padding: 20px;
-        padding-bottom: 60px; /* 하단 내비게이션 바 공간 확보 */
+        padding-bottom: 70px; /* 하단 네비게이션 바 공간 확보 */
+        box-sizing: border-box; /* 화면 초과 방지 */
     }
     .about-container {
         flex-direction: column;
