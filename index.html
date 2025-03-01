@@ -94,14 +94,14 @@
             top: 18px;
         }
          /* Mobile Responsive Styles */
-      @media (max-width: 768px) {
+     @media (max-width: 768px) {
     body {
         flex-direction: column;
         overflow-x: hidden;
     }
     .sidebar {
         width: 100%;
-        height: auto;
+        height: 70px; /* 기존 크기 유지 */
         position: fixed;
         bottom: 0;
         left: 0;
@@ -116,22 +116,28 @@
         z-index: 1000; /* 사이드바가 항상 위로 오게 설정 */
     }
     .sidebar a {
-        font-size: 14px;
+        font-size: 16px; /* 기존 스타일 유지 */
         padding: 10px;
         flex-grow: 1;
         text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: auto; /* 버튼 크기 균등하게 설정 */
+    }
+    .sidebar a i {
+        font-size: 20px; /* 아이콘 크기 조정 */
+        margin-bottom: 4px; /* 아이콘과 텍스트 간격 조정 */
     }
     .main-content {
         margin-left: 0;
         padding: 20px;
-        padding-bottom: 80px; /* 하단 사이드바 가리지 않도록 충분한 공간 확보 */
+        padding-bottom: 90px; /* 하단 사이드바 가리지 않도록 충분한 공간 확보 */
         box-sizing: border-box;
         position: relative;
         z-index: 1; /* 사이드바보다 낮게 배치 */
     }
+}
 
 }
     </style>
