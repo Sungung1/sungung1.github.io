@@ -94,14 +94,14 @@
             top: 18px;
         }
          /* Mobile Responsive Styles */
-       @media (max-width: 768px) {
+      @media (max-width: 768px) {
     body {
         flex-direction: column;
-        overflow-x: hidden; /* 오른쪽 깨짐 방지 */
+        overflow-x: hidden;
     }
     .sidebar {
         width: 100%;
-        height: auto;
+        height: 60px; /* 모바일에서 하단 네비게이션 높이 설정 */
         position: fixed;
         bottom: 0;
         left: 0;
@@ -110,26 +110,27 @@
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
-        padding: 10px 0;
         background: #2c2f3f;
         box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-        box-sizing: border-box; /* 깨짐 방지 */
+        z-index: 1000; /* 사이드바가 항상 위로 */
     }
     .sidebar a {
         font-size: 14px;
         padding: 8px;
-        flex-grow: 1; /* 사이드바 메뉴 균등 정렬 */
+        flex-grow: 1;
         text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
-        white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+        white-space: nowrap;
     }
     .main-content {
         margin-left: 0;
         padding: 20px;
-        padding-bottom: 70px; /* 하단 네비게이션 바 공간 확보 */
-        box-sizing: border-box; /* 화면 초과 방지 */
+        padding-bottom: 80px; /* 하단 네비게이션이 가리지 않도록 충분한 공간 확보 */
+        box-sizing: border-box;
+        position: relative;
+        z-index: 1; /* 사이드바보다 낮게 배치 */
     }
     .about-container {
         flex-direction: column;
@@ -139,6 +140,8 @@
         width: 120px;
         height: 120px;
     }
+}
+
 }
     </style>
 <script>
