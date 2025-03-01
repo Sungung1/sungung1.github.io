@@ -95,6 +95,19 @@
         }
          /* Mobile Responsive Styles */
      @media (max-width: 768px) {
+    .about-container {
+        display: flex;
+        flex-direction: column-reverse; /* 모바일에서 사진을 위로 이동 */
+        align-items: center; /* 중앙 정렬 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+    }
+
+    .about-container img {
+        order: -1; /* 강제로 이미지를 가장 위로 */
+    }
+}
+        
+        {
     body {
         flex-direction: column;
         overflow-x: hidden;
